@@ -11,9 +11,14 @@ function ($scope) {
 	$scope.addPost = function(){
 		//if scope is nil or an empty string, escape by returning out of this function
 		if(!$scope.title || $scope.title === '') { return; }
-	  $scope.posts.push({title: $scope.title, upvotes: 0});
+	  $scope.posts.push({
+	  	title: $scope.title, 
+	  	link: $scope.link,
+	  	upvotes: 0
+	  });
 	  //clear the title field after the new post is pushed
 	  $scope.title = '';
+	  $scope.link = '';
 	};
   $scope.incrementUpvotes = function(post) {
     post.upvotes += 1;
