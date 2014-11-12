@@ -15,4 +15,7 @@ function ($scope) {
 	  //clear the title field after the new post is pushed
 	  $scope.title = '';
 	};
+  $scope.incrementUpvotes = function(post) {
+    post.upvotes += 1;
+  };
 }]);
