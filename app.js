@@ -9,6 +9,10 @@ function ($scope) {
 									  {title: 'title 4', upvotes: 9},
 									  {title: 'title 5', upvotes: 4}		];
 	$scope.addPost = function(){
-	  $scope.posts.push({title: 'A new post!', upvotes: 0});
+		//if scope is nil or an empty string, escape by returning out of this function
+		if(!$scope.title || $scope.title === '') { return; }
+	  $scope.posts.push({title: $scope.title, upvotes: 0});
+	  //clear the title field after the new post is pushed
+	  $scope.title = '';
 	};
 }]);
